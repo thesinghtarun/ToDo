@@ -52,7 +52,13 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   trailing: InkWell(
-                      onTap: () => appController.delete(index),
+                      onTap: () {
+                        appController.delete(index);
+                        Fluttertoast.showToast(
+                            msg: "Deleted",
+                            backgroundColor: Colors.redAccent,
+                            textColor: Colors.white);
+                      },
                       child: const Icon(
                         Icons.delete,
                         color: Colors.redAccent,
